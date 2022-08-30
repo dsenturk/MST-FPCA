@@ -52,7 +52,7 @@ library(pbugs)
 # Simulate one dataset from the simulation design described 
 data.G <- MST_FPCA_simulation(numRegion = 2, sigma = .02)  # MST_FPCA_simulation.R (numRegion = 1 if you want 367 regions, 
                                                                                   # numRegion = 2 if you want 49 regions,
-                                                                                  # sigma = .02 where 0.02 can be any scalar representing the error variance)
+                                                                                  # sigma is the measurement error variance, where you can choose 0.02 or 0.5)
 
 # Data frame used for estimation and inference
 Y1 <- data.G[[1]]
@@ -89,7 +89,7 @@ MCARout <- MST_FPCA_MCAR(FPCAout, Y1, Y2, Adj.Mat) # MST_FPCA_MCAR.R
 CARout <- MST_FPCA_CAR(FPCAout, MCARout, L = M1 + M2, Adj.Mat) # MST_FPCA_CAR.R
 # Note that L needs to be an integer between 1 and (M1 + M2), which can be defined by the user. 
 # L is defining the number of eigencomponents included in the final CAR fitting.
-# The estimated spatial variance parameters alphaEst are used as a guidance in choosing L in applications as mentioned in Section 2 of the paper.
+# The estimated spatial variance parameters alphaEst can be used as a guidance in choosing L in applications as mentioned in Section 2 of the paper.
 # In our implementation, we choose L = M1 + M2.
 
 #############################################################################
