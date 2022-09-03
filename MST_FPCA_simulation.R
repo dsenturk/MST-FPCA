@@ -75,12 +75,12 @@ for(e in 1:M){
 # Load adjacency matrix from maps
 if(numRegion==1){
   # Merged HSA map
-  load("E:/QQ/two outcome simulation/fpca_mst/mst-fpca/simulation_standardization/final/AdjMat_367.RData")
+  load("~/AdjMat_367.RData")
   # Adjacency matrix from merged HSA map
-  W <- NewMergedData$W
+  W <- Adj_367
 } else {
   # US states map 
-  load("E:/QQ/two outcome simulation/fpca_mst/mst-fpca/simulation_standardization/final/49StateAdjMat.RData")
+  load("~/49StateAdjMat.RData")
 }
 
 # Number of total regions
